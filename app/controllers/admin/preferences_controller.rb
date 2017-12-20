@@ -8,6 +8,10 @@ class Admin::PreferencesController < ApplicationController
     @prefs = Preference.find(params[:id])
   end
 
+  def edit
+
+  end
+
   def create
     @prefs = Preference.create(preference_params)
     redirect_to admin_preference_path(@prefs)
