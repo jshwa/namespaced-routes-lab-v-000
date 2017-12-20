@@ -28,7 +28,7 @@ class SongsController < ApplicationController
     if Preferences.allow_create_artist == true
       @song = Song.new
     else
-      redirect_to song_path
+      redirect_to songs_path
     end
   end
 
@@ -73,4 +73,3 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title, :artist_name)
   end
 end
-
