@@ -9,7 +9,7 @@ class Admin::PreferencesController < ApplicationController
   end
 
   def edit
-
+    @prefs = Preference.find(params[:id])
   end
 
   def create
