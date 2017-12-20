@@ -9,7 +9,7 @@ class Admin::PreferencesController < ApplicationController
   end
 
   def create
-    @prefs = Preference.create(params)
+    @prefs = Preference.create(preference_params)
     redirect_to admin_preference_path(@prefs)
   end
 
