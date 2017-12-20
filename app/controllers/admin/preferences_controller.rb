@@ -17,6 +17,11 @@ class Admin::PreferencesController < ApplicationController
     redirect_to admin_preference_path(@prefs)
   end
 
+  def update
+    @prefs = Preference.find(params[:id])
+    @prefs.update(preference_params)
+  end
+
   private
 
   def preference_params
