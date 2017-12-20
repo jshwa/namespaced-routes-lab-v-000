@@ -6,7 +6,8 @@ class SongsController < ApplicationController
         redirect_to artists_path, alert: "Artist not found"
       else
         if Preference.first && Preference.song_sort_order == "ASC"
-        @songs = @artist.songs.order(name: :ASC)
+          @songs = @artist.songs.order(name: :ASC)
+        end
       end
     else
       @songs = Song.all
