@@ -1,4 +1,7 @@
 class ArtistsController < ApplicationController
+
+  before_action :set_preferences, only: [:index, :new]
+
   def index
     @artists = Artist.all
   end
@@ -8,7 +11,6 @@ class ArtistsController < ApplicationController
   end
 
   def new
-    raise @preferences.inspect
     if @preferences.allow_create_artists == true
       @artist = Artist.new
     else
